@@ -6,6 +6,7 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
 import { ArrowDownRight, ArrowRight, Clock3, Sparkles } from 'lucide-react';
 import { Link, Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
+import { AdSpace } from '@/components/AdSpace';
 import { MemoryGame } from '@/games/MemoryGame';
 import { MergeGame } from '@/games/MergeGame';
 import { ReactionGame } from '@/games/ReactionGame';
@@ -98,6 +99,7 @@ function Home() {
           </div>
         </div>
       </section>
+      <AdSpace slotId="arcade-home-banner" />
       <section aria-labelledby="library-title">
         <div className="section-head">
           <h2 id="library-title">Pick your pause</h2>
@@ -132,6 +134,7 @@ function GameFrame({ children }: { children: ReactNode }) {
       <section className="game-main">
         <Link href="/" className="back-link" data-testid="link-back-library"><ArrowDownRight size={15} /> Back to the arcade</Link>
         {children}
+        <AdSpace slotId="arcade-game-bottom" />
       </section>
     </PageFrame>
   );

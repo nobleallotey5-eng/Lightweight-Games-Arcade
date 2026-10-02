@@ -114,6 +114,9 @@
 .hero h1 { font-size:clamp(48px,7vw,82px);line-height:.94;letter-spacing:-.075em;margin:15px 0 18px;max-width:650px;font-weight:700; }
 .hero h1 em { color:#e36349;font-style:normal; }
 .hero-copy { color:#666b68;max-width:440px;line-height:1.65;font-size:15px;margin:0; }
+.ad-space {box-sizing:border-box;width:100%;max-width:970px;min-height:90px;margin:0 auto 34px;padding:14px 20px;border:1px dashed #c9c3b5;border-radius:13px;background:rgba(251,248,239,.7);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;text-align:center;color:#77796f;}
+.ad-space-label {font:500 10px var(--app-font-mono);letter-spacing:.14em;text-transform:uppercase;}
+.ad-space-note {font-size:11px;line-height:1.4;}
 .hero-right { position:relative;min-height:210px;display:flex;align-items:center;justify-content:center; }
 .arcade-art { position:relative;width:245px;height:192px; transform:rotate(3deg); }
 .art-sun { width:144px;height:144px;border-radius:50%;background:#f4cd52;position:absolute;right:13px;top:8px;border:2px solid #222b3c; }
@@ -150,6 +153,7 @@
 .merge-art i:nth-child(2){background:#ed684d;color:white}.merge-art i:nth-child(5){background:#f4cd52}.merge-art i:nth-child(8){background:#91cbb9}
 .library-footer {margin-top:39px;padding:22px 0 29px;border-top:1px solid #d8d4c9;display:flex;justify-content:space-between;color:#77796f;font:10px var(--app-font-mono);letter-spacing:.08em;text-transform:uppercase}
 .game-main {padding:34px 0 65px;}
+.game-main .ad-space {margin-top:36px;margin-bottom:0;}
 .back-link {display:inline-flex;align-items:center;gap:7px;color:#676b68;text-decoration:none;font:11px var(--app-font-mono);text-transform:uppercase;letter-spacing:.08em;transition:color .2s;}
 .back-link:hover {color:#e36349}
 .game-heading {display:flex;align-items:end;justify-content:space-between;gap:20px;margin:24px 0 23px;}
@@ -196,6 +200,8 @@
 @media(max-width:760px) {
   .shell{padding:0 22px}.topbar{height:68px}.top-note{font-size:9px}
   .hero{padding:48px 0 30px;grid-template-columns:1fr;gap:5px}
+  .ad-space{min-height:72px;margin-bottom:28px;padding:12px}
+  .game-main .ad-space{margin-top:28px;margin-bottom:0}
   .hero h1{font-size:clamp(53px,13vw,74px);max-width:540px}
   .hero-right{position:absolute;right:12px;top:100px;min-height:120px;opacity:.32;transform:scale(.62);transform-origin:top right;pointer-events:none}
   .game-grid{grid-template-columns:1fr;gap:14px}
