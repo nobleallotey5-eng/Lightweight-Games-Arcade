@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Quickplay Arcade"
+description = "A responsive browser arcade where anyone can jump into lightweight mini-games instantly, without accounts or downloads."
+version = "1.0.0"
+id = "artifacts/quickplay-arcade"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25635
+
+[services.development]
+run = "pnpm --filter @workspace/quickplay-arcade run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/quickplay-arcade", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/quickplay-arcade/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25635"
+BASE_PATH = "/"
