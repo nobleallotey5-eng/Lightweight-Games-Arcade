@@ -4,6 +4,7 @@ import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
+import { PrivacyPage } from '@/pages/privacy';
 import { ArrowDownRight, ArrowRight, Clock3, Sparkles } from 'lucide-react';
 import { Link, Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
 import { AdSpace } from '@/components/AdSpace';
@@ -31,6 +32,11 @@ function PageFrame({ children }: { children: ReactNode }) {
           <div className="top-note"><span>●</span> the tiny break arcade</div>
         </header>
         {children}
+        <footer className="library-footer">
+          <span>MADE FOR THE IN-BETWEEN</span>
+          <Link href="/privacy" className="footer-policy-link">Privacy &amp; ads</Link>
+          <span>NO SCOREBOARD. JUST YOU.</span>
+        </footer>
       </div>
     </main>
   );
@@ -120,10 +126,6 @@ function Home() {
           ))}
         </div>
       </section>
-      <footer className="library-footer">
-        <span>MADE FOR THE IN-BETWEEN</span>
-        <span>NO SCOREBOARD. JUST YOU.</span>
-      </footer>
     </PageFrame>
   );
 }
@@ -149,6 +151,9 @@ function MemoryPage() {
 function MergePage() {
   return <GameFrame><MergeGame /></GameFrame>;
 }
+function PrivacyRoute() {
+  return <PageFrame><PrivacyPage /></PageFrame>;
+}
 
 function Router() {
   return (
@@ -158,6 +163,7 @@ function Router() {
         <Route path="/play/reaction" component={ReactionPage} />
         <Route path="/play/memory" component={MemoryPage} />
         <Route path="/play/merge" component={MergePage} />
+        <Route path="/privacy" component={PrivacyRoute} />
         <Route component={NotFound} />
       </Switch>
     </RoutedErrorBoundary>
